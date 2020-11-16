@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>java期末</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+  .typora-export h1::after, .typora-export h2::after, .typora-export h3::after, .typora-export h4::after, .typora-export h5::after, .typora-export h6::after { content: ""; display: block; height: 100px; margin-bottom: -100px; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        border-top: 1px solid #eee;
+        margin-top: .3em;
+    }
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h3><a name="java期末考试" class="md-header-anchor"></a><span>Java期末考试</span></h3><p><span>题型：单选 多选（告诉了有几个选项） 填空 判断 主观题  编程题</span></p><p><strong><span>前面的概念也会考maven一类的</span></strong></p><p><strong><span>重点是PPT的内容</span></strong></p><h4><a name="1-会写符合高质量要求的代码" class="md-header-anchor"></a><span>1 会写符合高质量要求的代码</span></h4><p><strong><span>高质量代码的注解：</span></strong></p><p><span>用简短的几句话总结代码想要做的事情，或者在一个高度的层面上对代码进行描述。还可以用于来表达一些代码本身不能表达的事情，比如版本号啊，版权声明啊等等</span></p><p><strong><span>命名的要求</span></strong></p><p><span>Package: org.edu.zju.cst</span></p><p><strong><span>类和接口</span></strong><span>：驼峰命名，使用完整的单词，内部的每一个单词的首字母大写 UserCount</span></p><p><strong><span>方法：</span></strong><span>使用动词，第一个字母小写，其余单词的首字母大写 setName</span></p><p><strong><span>变量：</span></strong><span>第一个字母小写，其余单词的首字母大写，避免使用_和$ myName</span></p><p><strong><span>常量</span></strong><span>：全部大写，单词之间使用_隔开 MAX_NUMBER </span></p><p><strong><span>声明</span></strong><span>：一行只声明一个变量；数组的声明最好写为 int[] args；即使if只包含一条语句也要使用大括号；循环要注意避免设置太多的变量，switch要注意每一个case都要break,若不包含最好说明情况，每个switch都要包含default;</span></p><p><strong><span>异常捕获若不处理</span></strong><span>，最好给出解释；</span></p><p><span>如果代码一行写不下，那么需要在合适的的地方进行断开，下一行的代码要与上一行保持整齐</span></p><h4><a name="2-泛型-generic" class="md-header-anchor"></a><span>2 </span><strong><span>泛型</span></strong><span> </span><strong><span>generic</span></strong><span> </span></h4><p><span>掌握最基本的概念 编程题目开发工具类(高质量要求)</span></p><p><span>Java1.5开始引入的java泛型类，避免了之前在创建集合对象时，由于继承自Object类，可以放入任何的类型的数据，但是在编译时无法检查到错误，运行时才会检查到。List</span><String><span> names = new ArrayList</span><String><span>();这样限制了类型。就能在编译时检测到违法的操作。</span></p><p><span>参量多态Parametric polymorphism 其实也就是泛型的前身</span></p><p><span>能达到在未知类型的情况下，方法或者类型能够以相同的方式来对值进行处理。这样子就保证了类型安全。</span></p><p><span>在Java的Collection中用的最多，同样也在反射 reflection中用到了</span></p><p><strong><span>怎么实现一个泛型类 基础语法</span></strong></p><p><span>ArrayList泛型的定义  实际的类型都使用了E来替代，在实际的调用中，将其按需赋值为实际的类型。 要注意所有需要在调用时指定的的类型都需要设置为E</span></p><p><strong><span>public class ArrayList</span><E><span> extends AbstractList</span><E><span> implements List</span><E><span>{</span></strong></p><p><span>     </span><strong><span>public boolean add(E o){</span></strong></p><p><span>    </span><strong><span>}</span></strong></p><p><strong><span>}</span></strong></p><p><strong><span>注意在需要判断E类型是否安全时，一定要使用equals();</span></strong></p><p><strong><span>注意：</span></strong></p><p><span>如果在类中使用单个泛型方法时（通常为静态），需要在其返回类型之前加上类型参数，注意下面的copy函数声明前的参数</span></p><p><span>Public class Collections{</span></p><p><span>  public static </span><T><span> void copy(List</span><T><span> dst, List</span><T><span> src){</span></p><p><span>    ……</span></p><p><span>} </span></p><p><span>} </span></p><p><span>一般是不需要自己来创建一个泛型类的  dbq。。。。</span></p><p><strong><span>受限的类型参数</span></strong></p><p><strong><span>这是一个上限upper bound，接受给定的超类型或其任何的子类型</span></strong></p><p><strong><Type extends SuperType></strong><span> extends可以理解为is a</span></p><p><span>&lt;T extends Comparable</span><T><span>&gt;</span></p><p><strong><span>&lt;Type extends ClassA &amp; InterfaceB $ InterfaceC &amp; ……&gt;</span></strong></p><p><strong><span>这是一个下限lower bound 接受任何给定的超类型或超类型的任何超类型</span></strong></p><p><strong><Type super SuperType></strong></p><p><span>找最值的时候可能会用到Comparable，那么在定义泛型方法的时候需要指明一下，如下需要找出集合中的最大值，则需要这么定义</span></p><p><span>Public static &lt;T extends Comparable</span><T><span>&gt; T max(Collection</span><T><span> c){}</span></p><p><span>如下需要实现一个复制：</span></p><p><span>Public static </span><T><span> void copy(List &lt;? super T &gt; dst, List&lt;? Extends T&gt; src)</span></p><p><span>要将所有的元素从src复制到dst,这样子的，dst需要安全的存储来自src的所有元素。这也就意味这src所有的元素必须都是dst元素的类型或者其子类型</span></p><p><span> </span></p><p><strong><span>数组和泛型的区别</span></strong></p><p><span>数组是具体化的，泛型是擦除的</span></p><p><span>数组的类型检查会在运行时再次执行，但是集合类型只会在编译时执行</span></p><p><span>所有的泛型类在编译后都会变成Object，在运行时，所有的泛型实例都是同样的类型 </span></p><p><span>List</span><String><span> lst1 = new ArrayList</span><String><span>();</span></p><p><span>List</span><Integer><span> lst2 = new ArrayList</span><Integer><span>();</span></p><p><span>lst1.getClass() == lst2.getClass() //他的返回值为true</span></p><p><strong><span>注意不能使用instanceof</span></strong><span>                                                     </span><br/><span> </span><strong><span>泛型不能创建参数化的类型或者数组，但可以创建该类型的变量，将其作为参数</span></strong></p><p><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093255201.png" referrerpolicy="no-referrer" alt="image-20201113093255201"></p><p><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093303632.png" referrerpolicy="no-referrer" alt="image-20201113093303632"></p><p><span>泛型数组是不安全的，数组是协变（covariant）的，泛型是可变(invariant)的。</span></p><p><span>简单而言就是如果sub是super的子类型，那么sub[]就是super[]的子类型</span></p><p><span>但是对于任意两个不同的类型Typel和Type2, List&lt;Type1＞既不是List&lt; Type2＞ 的子类型，也不是List&lt;Type2＞的超类型</span></p><p><span> </span></p><p><strong><span>通配符 ？</span></strong><span> </span></p><p><span>在方法参数中使用通配符时，编译器会组织你进行一些可能会破坏参数列表的操作。以下二者的声明时等价的</span></p><p><span>Public </span><T extends Animal><span> void takeThing(ArrayList</span><T><span> list)</span></p><p><span>Public void takeThing(ArrayList&lt;? Extends Animal&gt; list)</span></p><p><span>泛型和数组 和子类的关系 编译能否通过等</span></p><p><strong><span>把不是泛型的改成泛型 一些注意点</span>
+</strong><span> 书上第29条的例子，泛型数组是一定不能被创建的，但是可以创建Object类型的数组，然后将他强制转换为E类型，此处就可以使用消除受检异常的标记</span></p><p><span>   @SuppressWarnings(“unchecked”),又如下面的例子：</span></p><p><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093318008.png" referrerpolicy="no-referrer" alt="image-20201113093318008"></p><p><span>   注意各种对应的参数种类与区别</span></p><p><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093330797.png" referrerpolicy="no-referrer" alt="image-20201113093330797"></p><p><span>强制转换标注忽略警告 @SuppressWarnings(“unchecked”)</span></p><p><span>要注意SuppressWarnings要标注到具体的内容，不要整个类或者整个方法,注意英文拼写正确</span></p><h4><a name="3-通用编程" class="md-header-anchor"></a><span>3 通用编程</span></h4><p><strong><span>基元类型</span></strong><span>比较相等性 double float</span></p><p><span>基本类型要优先于装箱基本类型</span></p><p><span>基元类型和装箱类型的区别 </span></p><p><span>int Integer </span></p><p><span>double Double </span></p><p><span>boolean Boolean</span></p><p><span> 二者之间主要有三个区别：</span></p><p><span>1 基本类型只有值，而装箱基本类型则具有与他们的值不同的同一性，换句话说，两个装箱类可可以具有相同的值和不同的同一性。</span></p><p><span>2 基本类型只有函数值，而每个装箱基本类型则都有一个非函数值，null</span></p><p><span>3 基本类型通常要比装箱基本类型更节省时间和空间。</span></p><p><span>注意PPT的例子，传入参数为装箱类比较大小时，可能不会得到预期的结果，对装箱基本类型使用==操作符几乎时错误的</span></p><p><span>当在一项操作中混合使用基本类型和装箱基本类型时，装箱基本类型就会自动拆箱。但是当你Integer a;此时a是null,对他进行拆箱会抛出NullPointerException错误</span></p><p><span>哪些是在编译进行的 哪些是在运行进行的</span></p><p><span>装箱是在编译时进行的</span></p><p><strong><span>什么时候使用装箱基本类型呢？</span></strong></p><p><span>1 作为集合中的元素、键和值，（不能将基本类型放在集合中，因此必须使用装箱基本类型）</span></p><p><span>2 在参数化类型和方法中，必须使用装箱基本类型作为类型参数。</span></p><p><span>3 在进行反射方法的调用时，必须使用装箱基本类型</span></p><p><span>此外要尽可能使用的基本类型。，更加简单也更加的快速。</span></p><p><span> 要了解并使用类库</span></p><p><span>random方法是假的随机数，Random.nextInt（int）很好的解决了这个问题</span></p><p><span>常见的java.io java.lang java.util都i要熟悉</span></p><p><span>避免使用float和double,如果你需要精确的数值，因为他们不能精确的表示小数，使用BigDecimal、int、或者long进行运算，BigDecimal运算比较慢</span></p><p><strong><span>优化的概念和理念</span></strong></p><p><span>优化弊大于利，要写出好的程序而不是快的程序，努力避免那些限制性能的决策，避免不成熟的优化</span></p><p><span>在遍历集合和数组时优先使用</span><strong><span>for each</span></strong><span> 有很多好处。。。能够简化编程，并且能够避免很多不必要的错误。</span></p><p><span>但是有三种情况是不能使用for each</span></p><p><span>1 解构过滤，需要遍历集合然后删除选定的元素，就需要使用显式的迭代器</span></p><p><span>2 转换 需要遍历数组然后修改某些值时，则必须使用迭代器</span></p><p><span>3 平行迭代 并行的遍历多个集合 保证所有迭代器的变量同步前进</span></p><p><span>慎用变长参数（Java1.5之后被提出来的）</span></p><p><span>注意传入的参数的形式，可能是空数组，所以要进行检测，或者直接限制传入的参数形式，一个定长，一个变长</span></p><p><span>将局部变量的作用范围最小化，最好是在使用之前再进行声明 for循环为例</span></p><p><span>如果可以替代，那么最好避免使用字符串</span></p><p><span>字符串不适合代替其他的值类型，不适合代替枚举类型。不适合代替聚合类型，也不是和代替能力表</span></p><p><span>不要使用字符串连接操作符来合并多个字符串，会严重影响性能，应该使用StringBuilder的append方法</span></p><p><span>记得String是不可变的类，StringBuilder是它对应的可变的类</span></p><h4><a name="4-方法" class="md-header-anchor"></a><span>4 方法</span></h4><p><strong><span>检查参数的有效性</span></strong></p><p><span>当一个方法有一些参数是违规的，那么需要对他进行提前检查，当然不能耗费很大的代价，同时要在文档中进行注释  要使用Javadoc的@throw对可能抛出的异常进行标注</span></p><p><span>当然对于此类异常通常为@throw IllegalArgumentException</span></p><p><span>当然对于一些内部的私有方法，因为调用他们是默认是满足了前提条件的，可以不进行检查</span></p><p><strong><span>defensive copy的用法</span></strong><span>（保护性拷贝）</span></p><p><span>Java是一门安全的语言，它对于缓冲区溢出、数组越界、非法指针及其他的 内存破坏错这些严重影响着C/C++的问题都会自动免疫。但是仍然要将你的类与客户端隔离开来</span></p><p><span>因为假设类的客户端会尽其所能来破坏这个类的约束条件，因此必须保护性的设计程序</span></p><p><span>如下面的程序：</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114122506.png" referrerpolicy="no-referrer" alt="QQ图片20201114122506"></p><p><span>单纯的从类来看，这个类是不可变的，并且加强了约束条件start不能在end后面的，所但是Date类本身是可变的，因此在外部定义时是可以随意的对变量进行修改（现在都是用Instant，这个类是不可变的。Date已经过时了）</span></p><p><span>为了保护上面类内部的信息免遭这种攻击，所以需要对构造器的每个参数进行保护性的拷贝。并且使用备份的对象作为实例的组件，修改如下：</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114123000.png" referrerpolicy="no-referrer" alt="QQ图片20201114123000"></p><p><span>总而言之，需要对客户端提供的所有可变的参数进行防御性的拷贝</span></p><p><strong><span>要尽可能的使用不变的对象</span></strong></p><p><span>重写克隆方法得注意点 </span><strong><span>clonable 接口实现方式</span></strong></p><p><strong><span>慎用重载override</span></strong></p><p><span>overload 重载  具体调用会调用哪个方法  静态的由编译器决定选择哪个方法执行</span></p><p><span>具体调用哪个重载方法是在编译时做出决定的。</span></p><p><span> 但是对于重载方法的选择是静态的，而对于被覆盖的方法的选择是动态的。</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114154014.png" referrerpolicy="no-referrer" alt="QQ图片20201114154014"></p><p><span>在上述的代码中，classifty被重载，但是在调用时因为都是Collection&lt;?&gt;,所以会打印三次Unknow Collection</span></p><p><span>为了不混淆：不要导出两个具有相同参数的重载</span></p><p><span>最好不要使用重载，使用静态工厂方法</span></p><p><strong><span>override 重写</span></strong><span>（子类重写父类的方法） 动态的 更加面向对象，动态的由系统运行时决定</span></p><p><img src="file:///C:\Users\YSH\Documents\Tencent Files\1028509048\Image\C2C\}V$U9R4B$]KXF{O0GK}K8F5.png" referrerpolicy="no-referrer" alt="img"></p><p><strong><span>当为空时，返回零长度的数组或者集合，而不是null</span></strong></p><p><strong><span>会写注释，按照高质量要求</span></strong></p><p><span>为所有导出API的元素编写文档注释</span></p><p><span>在每个导出的类、接口、构造函数、方法和字段描述之前添加文档注释，不应该有两个成员构造函数具有相同的摘要描述</span></p><p><span>每一个方法都应该具有</span></p><p><span>@param  每个参数的标签</span></p><p><span>@return  返回标签除非是void类型</span></p><p><span>@throws   异常标签</span></p><p><span>一个好的例子：</span></p><p><span>第一句话是整段注释的一个摘要：精简的描述方法想要实现的功能等</span></p><p><img src="file:///C:\Users\YSH\Documents\Tencent Files\1028509048\Image\C2C\Q}NYZIZ]U}G7L4ZVODCYO9L.png" referrerpolicy="no-referrer" alt="img"></p><p><span>要注意。因为注释中包含HTML元素，所以一些符号的出现可能要采用特殊的动作</span></p><p><span>使用{@literal}标签将他们包围起来，这样就不会识别为HTML标记语言</span></p><p><span>一些常见的：方法/构造器：通常使用动词短语来描述这个方法所执行的内容</span></p><p><span>类/接口/域：一般是用一组名词短语描述他所代表的事情</span></p><h4><a name="5-同步" class="md-header-anchor"></a><span>5 同步</span></h4><p><span>最基本的一些概念 </span></p><p><strong><span>volatile关键字</span></strong></p><p><span>volatile修饰符不执行互斥访问，它可以保证任何一个线程在读取该区域时都将看到最近刚刚被写入的值，但是它不能保证互斥性</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114204047.png" referrerpolicy="no-referrer" alt="QQ图片20201114204047"></p><p><span>如上面这个例子，他想要确保每个调用都返回不同的值，但是增量操作符不是原子的，如果第二个线程在第一个线程读取旧值和返回新值的期间读取这个域，第二个线程就会与第一个此案成看到同样的值，返回相同的序列号，这就是安全性失败</span></p><p><span>修改可以采用synchronized关键字，但是最好使用java.util.concurrent.atmoic的AtomicLong类</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114204641.png" referrerpolicy="no-referrer" alt="QQ图片20201114204641"></p><p><strong><span>synchronized关键字</span></strong><span> </span></p><p><span>synchronized关键字可以保证在同一时刻，只有一个线程可以执行某一个方法，或者某一个代码块，在类型声明前加上关键字即可</span></p><p><span>当然要注意需要将读写都加上同步，否则无法起作用</span></p><p><strong><span>用法 还有二者的区别 拼写对</span></strong></p><p><span>注意synchronized关键字实现的是互斥访问，但是volatile关键字并没有</span></p><p><span>当然避免过度的同步，当可变的数据由多个线程调用时，则必须进行同步互斥操作</span></p><p><strong><span>多线程里面不要调用什么</span></strong></p><p><span>为了避免死锁和数据破坏，千万不要从同步却与内部调用外来方法，更通俗的讲，要尽量将同步区域内部的工作量限制到最少</span></p><p><strong><span>注意线程的安全性和级别</span></strong></p><p><strong><span>每个类在线程安全方面是什么级别</span></strong></p><p><span>一个类为了可以被多个线程安全的使用，必须在文档中清楚的说明它所支持的线程安全性级别：</span></p><p><span>1 不可变的 immutable 这个类的实例时不可变的，所以不需要外部的同步String Long BigInteger</span></p><p><span>2 无条件的线程安全（unconditionally thread-safe）实例是可变的，但是这个类有着足够的内部同步，所以它的实例可以并发使用，无需任何外部的同步 AtomicLong  ConcurrentHashMap</span></p><p><span>3 有条件的线程安全（conditionally thread-safe）除了有些方法为了安全需要进行外部同步之外，这种线程的安全级别与无条件的线程安全相同 Collection.synchronized包装返回的集合，它的迭代器要求外部同步</span></p><p><span>4 非线程安全（not thread-safe ）这个类的实例是可变的，为了并发的使用它们，刻划断必须利用自己选择的外部同步包围每个方法调用，这个例子包括通用的集合实现，如Arraylist和HashMap</span></p><p><span>5 线程对立的（thread-hostile） 这种类不能安全的被多个线程并发使用，是因为在写的时候就没考虑到并发性</span></p><p><span>要注意在文档中描述一个有条件的线程安全类要很小心，必须指明哪个调用序列需要外部的同步，需要指明为了执行这些序列，必须获得哪一把锁</span></p><p><strong><span>私有锁</span></strong><span>Private Lock  把对象封装在他所同步的对象中，因为私有锁对象不能在这个类之外访问，也不能被这个类的客户端程序所访问</span></p><p><span>总是要定义为final  只能用于无条件线程安全的类</span></p><p><span>private final Object lock = new Object();</span></p><p><strong><span>慎用延迟初始化</span></strong></p><p><span>在大多数的情况下，正常的初始化要优先于延迟初始化。如果要使用延迟优化来破坏初始化的循环，就要使用同步访问方法</span></p><p><span>如果处于性能的考虑而需要对静态域使用延迟初始化，就使用lazy initlization holderclass模式</span></p><p><span>如果处于性能的考虑而需要对实例域使用延迟初始化，就是用双重检查模式（double-check idiom）.</span></p><p><strong><span>实现单例模式 双检是怎么实现的</span></strong></p><p><span>两次检查域的值，第一次检查时没有锁定，看看这个域是否被初始化了；第二次检查时有锁定，因为只有第二次检查时表明这个域没有被初始化，才会对这个域进行初始化，以下为实现：注意使用了volatile</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114214053.png" referrerpolicy="no-referrer" alt="QQ图片20201114214053"></p><p><span>双检查的实现：</span></p><p><code>private volatile FieldType field;</code></p><p><code>private FieldType getField() {</code></p><p><span>	</span><code>FieldType result = field;</code></p><p><span>	</span><code>if(result == null) {</code></p><p><span>		</span><code>synchronized(this) {</code></p><p><span>			</span><code>if(field == null) {</code></p><p><span>				</span><code>field = result = computeFieldValue();</code></p><p><span>			</span><code>}</code></p><p><span>		</span><code>}</code></p><p><span>	</span><code>}</code></p><p><code>}</code></p><h4><a name="6-object--对于所有对象都通用的一些方法" class="md-header-anchor"></a><span>6 Object  对于所有对象都通用的一些方法</span></h4><p><strong><span>哪些方法是object的 ，</span></strong></p><p><span>尽管Object是一个具体的类，但是设计他主要是为了扩展。他的final方法（equals、  hashCode、 toString、 clone、 和 finalize）都有明确的通用协定，在进行override时需要注意遵循一些规则</span></p><p><strong><span>怎么样来正确的重写equals方法</span></strong><span> 不能用第三方 自己实现（最好避免重写）</span></p><p><span>要遵循通用协定，在满足以下条件时就不需要重写：</span></p><p><span>1 类的每个实例本质上都是唯一的（枚举）代表活动实体而不是值（value）</span></p><p><span>2 类没必要提供逻辑相等的测试功能（random class）</span></p><p><span>3 父类已经重写了equals，并且父类的equals也适合用于这个类。 Set 继承于AbstractSet</span></p><p><span>4 类是私有的或者是包级私有的，可以确保他equals方法永远都不会被调用</span></p><p><strong><span>equals方法的一些通用协定</span></strong><span> equals方法前加注解 @Override</span></p><ol start='' ><li><span>自反性reflexivity  x.equals(x)的返回值一定是true  </span></li><li><span>对称性symmerty x.equals(y)那么一定有y.equals(x) </span></li><li><span>传递性transitivity xyz三者可以两两比较的返回值都为true</span></li><li><span>一致性consistency 对于非null的x和y,只要equals 的比较操作在对象中所用的信息没有被修改那么x.equals(y)返回值始终为true，</span></li><li><span>对于任何非null的x x.equals(null) 的返回值一定是false</span></li></ol><p><span>但是实现这些是有困难的：</span></p><p><span>自反性是自动的</span></p><p><span>对称性并不是，如以下的例子：</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113104453.png" referrerpolicy="no-referrer" alt="QQ图片20201113104453"></p><p>&nbsp;</p><p><span>在上面的类中，想要将类内部的字符串与外部普通的字符串对象进行比较。不区分大小写。那么在调用时就会出现以下的情况：</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113104629.png" referrerpolicy="no-referrer" alt="QQ图片20201113104629"></p><p><span>前一个equals调用的是覆盖后的方法，返回值为true，但是后一个equals调用的是String的equals方法，返回的是false</span></p><p><span>修改方法是对其进行重构</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113104953.png" referrerpolicy="no-referrer" alt="QQ图片20201113104953"></p><p><span>传递性也很容易违背。eg 子类增加的信息会影响equals的比较结果</span></p><p><span>在书中的点类，当子类对父类进行扩展增加了颜色的信息后，重写equals方法就会导致比较的结果不一致，父类的方法会忽略颜色，但是子类会考虑  这样就破坏了对称性</span></p><p><span>改良一在混合比较时忽略颜色的信息，这样虽然保证了对成性，但是无法保证传递性</span></p><p><span>我们无法在扩展可实例化的类的同时，既增加新的值组件，又能同时保留equals的约定</span></p><p><strong><span>里氏替换原则：（Liskov substitution principle）</span></strong><span>:一个类型的任何重要属性也将适用于他的子类型，因此为该类型编写的任何方法，在它的子类型上也应该用样的运行的很好</span></p><p><span>虽然没有一种令人满意的方法可以既能扩展不可实例化的类。又增加值的组件，但是根据复合优先继承的建议可以对类进行一些修改</span></p><p><strong><span>如何实现高质量的equals()方法</span></strong><span>：</span></p><p><span>1 使用==操作符检查“参数是否为这个对象的引用” 是则返回true</span></p><p><span>2 使用instanceof操作符检查“参数是否为正确的类型”是则返回true</span></p><p><span>3 把参数转换为正确的类型</span></p><p><span>4 对于该类中的每个关键（significant）的域，检查参数中的域是否与该对象中对应的域相匹配</span></p><p><span>5 检查自反性、对称性、传递性</span></p><p><span>对于既不是float 也不是double 类型的基本类型域，可以使用＝＝操作符进行比较；</span>
+<span>对于对象引用域，可以递归地调用equals 方法；对于float 域，可以使用静态、Float.</span>
+<span>compare(float, float ）方法；对于double 域，则使用Double . compare( double, double ）。</span></p><p><span>（书上39页有个phoneNumber的例子）</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201108103127.png" referrerpolicy="no-referrer"></p><p><strong><span>一些告诫</span></strong></p><p><span>覆盖equals方法时总要覆盖hashCode</span></p><p><span>不要企图让equals方法过于智能</span></p><p><span>不要让equals声明中的Object对象替换为其他的类型</span></p><p><span>不要抛出空指针异常（NullPointerException）或者找不到类(ClassCastException)的异常</span></p><p><strong><span>覆盖equals方法时总要覆盖hashCode</span></strong></p><p><span>hashCode 怎么重写 对于每种不同类型是怎么比较和取值的</span></p><p><strong><span>一些hashcode的通用协定</span></strong></p><p><span>1 ，只要对象的equals 方法的比较操作所用到的信息没有被修改，那么对同一个对象的多次调用， hashCode 方法都必须始终返回同一个值。在一个应用程序与另一个程序的执行过程中，执行hashCode 方法所返回的值可以不一致。</span></p><p><span>2 如果两个对象根据equals(Object ）方法比较是相等的，那么调用这两个对象中的hashCode 方法都必须产生同样的整数结果。</span></p><p><span>3 如果两个对象根据equals(Object ）方法比较是不相等的，那么调用这两个对象中的hashCode 方法，则不一定要求hashCode 方法必须产生不同的结果。但是程序员应该知道，给不相等的对象产生截然不同的整数结果，有可能提高散列表（ hashtable ）的性能。</span></p><p><span>注意phoneNumber那个例子  实际的返回值是null，因为该类覆盖了equals方法，但是没有重写hashCode方法，所以导致两个相等的实例具有不同的散列码。因为HashMap有一项优化是，将每一项与关联的散列码缓存起来，如果散列码不匹配，就不会再去检验对象的等同性。</span></p><p><strong><span>hashcode的重新计算的方法</span></strong></p><p><span>直接返回一个固定的值，这样子是合法的，但是千万不要这么做</span></p><p><span>@Override public int hashCode() {return 42;}，这使得每个对象都具有相同的散列码</span></p><p><span>解决办法：</span></p><ol start='' ><li><span>声明一个int 变量并命名为result ，将它初始化为对象中第一个关键域的散列码c </span></li><li><span>对象中剩下的每一个关键域f 都完成以下步骤：</span>
+<span>a . 为该域计算int 类型的散列码C:</span>
+<span>I . 如果该域是基本类型，则计算Type. hashCode ( f ），这里的Type 是装箱基本类型的类，与f 的类型相对应。</span>
+<span>II .如果该域是一个对象引用，并且该类的equals 方法通过递归地调用equals的方式来比较这个域，则同样为这个域递归地调用hashCode 。如果需要更复杂的比较则为这个域计算一个“范式”（ canonical representation ），然后针对这个范式调用hashCode 。如果这个域的值为null，则返回0 （或者其他某个常数，但通常是0）</span>
+<span>皿． 如果该域是一个数组，则要把每一个元素当作单独的域来处理。也就是说，递</span>
+<span>归地应用上述规则，对每个重要的元素计算一个散列码，然后根据步骤2. b中的做法把这些散列值组合起来。如果数组域中没有重要的元素，可以使用一个常量，但最好不要用0 。如果数组域中的所有元素都很重要，可以使用Arrays . hashCode方法。</span>
+<span>b . 按照下面的公式，把步骤2 . a 中计算得到的散列码c 合并到result 中：</span>
+<span>result = result  + c；</span></li><li><span>return result;</span></li></ol><p><code>private int hashCode = 0;</code></p><p><span> </span><code>@Override public int hashCode(){</code></p><p><span> </span><code>if (hashCode == 0)</code></p><p><span> </span><code>{.....//进行hashCode的计算}</code></p><p><span> </span><code>else return hashCode</code></p><p><span> </span><code>};</code></p><p><strong><span>总要覆盖toString方法</span></strong></p><p><span>	</span><span>Objectt的toString默认的返回值是类的名称@散列码的无符号的十六进制表示，这不方便阅读，所以建议都要覆盖toString方法</span></p><p><span>在实际应用中，toString方法应该返回对象中包含的所有值得关注的信息 。如果对象太大，或者对象中包含的状态信息难以用字符串表达，那么toString应该返回一个摘要信息</span></p><p><span>是否在文档中指定返回值的格式呢？</span></p><p><span>对于电话号码、矩阵类建议这么做。它可以被用作一种标准的、明确的、适合人阅读的对象表示法。这种表示法可以用于输入和输出，以及用在永久适合人类阅读的数据对象中</span></p><p><strong><span>指定后也有一些不足之处</span></strong></p><p><span>如果这个类已经被广泛使用，一旦指定格式，就必须始终如一地坚持这种格式。程序员将会编写出相应的代码来解析这种字符串表示法、产生字符串表示法，以及把字符串表示法嵌入持久的数据中。如果将来的发行版本中改变了这种表示法，就会破坏他们的代码和数据</span></p><p><span>当然无论指定与否，都需要在文档中明确的表明你的意图，都需要为toString返回值中包含的所有信息提供一种可以通过编程访问的途径</span></p><p><strong><span>clone方法怎么正确实现</span></strong><span>  谨慎的覆盖clone()方法</span></p><p><span>Cloneable是一个‘mixin’接口，表明这样的对象允许克隆</span></p><p><span>有一些约束，但是非常的弱</span></p><p><span>对于任何对象X ，表达式x.clone() != x将会返回结果true ，</span></p><p><span>并且表达式x.clone().getClass() == x.getClass()将会返回结果true ，但这些都不是绝对的要求。通常情况下，表达式x.clone() .equals(x)将会返回结果true ，但是，这也不是一个绝对的要求。</span></p><p><span>如果一个类实现了Cloneable, Object 的clone方法就返回该对象的逐域拷贝，否则就会抛出CloneNotSupportedException 异常（要注意数组被认为实现了克隆的接口）</span></p><p><span>正常的情况，克隆完成后，此对象的类的新实例被创建成功并且它的所有字段都用这个对象对应字段的内容初始化，就像通过赋值一样，字段的内容本身并没有被克隆</span></p><p><span>要注意浅拷贝而不是深拷贝</span></p><p><span>如果类的每个字段包含基本类型或多不可变对象的引用，那么重写clone方法很容易</span></p><p><span>只需使用public方法来覆盖clone,该方法的返回类型是类本身</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113121215.png" referrerpolicy="no-referrer" alt="QQ图片20201113121215"></p><p><span>不可变的类永远都不应该提供克隆方法</span></p><p><span>如果一个类只有原始域或者不可变引用作为域，那么super.clone()就能返回你想要的内容</span></p><p><span>对于具有可变引用的对象，需要深度拷贝</span></p><p><span>存在的一些问题：</span></p><p><span>1 对于final字段，clone可能会存在一些问题</span></p><p><span>2 递归的克隆可能不够</span></p><p><span>总而言之最好不用使用clone.不要实现Cloneabl接口，最好提供单独的复制机制</span></p><p><span>Stack的克隆</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113122130.png" referrerpolicy="no-referrer" alt="QQ图片20201113122130"></p><p><strong><span>Comparable方法</span></strong><span> 的契约 抛出异常 equals抛不出</span></p><p><span>一些约束： 根据此对象和对象的顺序返回负、0或这正</span></p><p><span>需要满足sgn(x.compareTo(y) == -sgn(y.compareTo(x))并且还要保证这个关系是可以传递的</span></p><p><span>如果x.compareTo(y) == 0, x 和 y 与z相比的结果必须是一致的</span></p><p><span>建议x.compareTo(y) == 0 当x.equals(y)时</span></p><p><span>要注意CompaerTo是可以抛出ClassCastException的</span></p><p><span>千万不要被上述约定中的数学关系所迷惑。如同equals 约定一样，compare To 约定并没有看起来那么复杂。与equals 方法不同的是，它对所有的对象强行施加了一种通用的等同关系， compareTo 不能跨越不同类型的对象进行比较：</span><strong><span>在比较不同类型的对象时， compareTo 可以抛出ClassCastException 异常</span></strong><span>。通常，这正是compareTo 在这种情况下应该做的事情。合约确实允许进行跨类型之间的比较，这一般是在被比较对象实现的接口中进行定义。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Object x = new BigDecimal(“1.0”);</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Object y = new BigDecimal(“1.00”);</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 45px;"></div><div class="CodeMirror-gutters" style="display: none; height: 45px;"></div></div></div></pre><p><span>在这里x.equals(y)的值为false  但是x.compareTO(y)==0</span></p><p><span>eg2</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Set s = new HashSet(); </span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Set t = new TreeSet();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">s.add(x); s.add(y);  // HashSet uses equals, so s has 2 elements</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">t.add(x); t.add(y);  // TreeSet uses compareTo, so t has 1 element</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 134px;"></div><div class="CodeMirror-gutters" style="display: none; height: 134px;"></div></div></div></pre><p><span>和泛型结合怎么定义</span></p><p><span>Comparable接口的定义</span></p><p><code>public interface Comparable&lt;T&gt;{</code></p><p><span>	</span><code>public int compareTo(T o);</code></p><p><code>}</code></p><p><span>使用该接口</span></p><p><code>public static &lt;T extends Comparable&lt;? super T&gt;&gt; void sort(List&lt;T&gt; list){}</code></p><p><strong><span>和访问控制权限有关的  子类放大权限什么时候允许 什么时候不允许</span></strong></p><p><strong><span>不同的java语言版本之间的区别 (常识)</span></strong></p><p><strong><span>泛型 枚举啥时候引入的 哪个版本 知道一些版本变迁历史</span></strong></p><p><strong><span>不要定义成员变为public</span></strong></p><p><strong><span>把继承关系改成组合 分析哪些方面可以封装</span></strong></p><p><strong><span>接口抽象类区别 了解</span></strong></p><p><strong><span>嵌套类基本概念 内部类</span></strong></p><h4><a name="7-静态工厂方法" class="md-header-anchor"></a><span>7 静态工厂方法</span></h4><p><span>通过一个静态方法来对外提供自身实例的方法，就是我们所说的静态工厂方法（Static factory method）, 例如：</span></p><p><code>Integer number = Integer.valueOf(&quot;3&quot;)</code></p><p><span>传统的</span><strong><span>new</span></strong><span>来创造一个实例时，告诉jvm来再内存中开辟出一篇新的空间，然后调用构造函数来初始化成员变量，最终把引用返回给调用方</span></p><p><strong><span>实例受控制的类：</span></strong><span>可以控制在哪些时刻有哪些实例存在</span></p><p><strong><span>使用静态工厂方法有几个好处</span></strong></p><p><span>1 静态工厂方法有名字，这样子就更能清晰的表达函数的意义。因为java的构造函数和类名是一样的，这样就会导致需要多个构造器时发生问题静态工厂方法可以给方法起更多的有意义的名字来准确的识别需求</span></p><p><span>2 不必每次调用他们都创建一个新对象  可以使用实例受控的类，这样就能避免创建不必要的重复对象。实例受控的类可以确保他是一个Singleton或者是不可实例化的。当且仅当a==b时，才有a.equals(b)为true</span></p><p><span>3 可以返回原返回类型的任何子类型的对象  如java.util.Collection类.构造方法只能返回确切的自身类型，而静态工厂方法则能够更加灵活，可以根据需要方便地返回任何它的子类型的实例</span></p><p><span>4 在创建带泛型的实例时，可以更加的简洁</span></p><p><strong><span>静态工厂方法也有几个缺点：</span></strong></p><p><span>1 类如果不含共有的或者受保护的构造器，就不能被子类化。这也就鼓励程序员使用复合（composition）,而不是继承。</span></p><p><span>2 没有特别的文档注释支持</span></p><p><span>3 因为没有特定的命名，所以程序员很难发现他们</span></p><p><span>下面是一些惯用的名称：</span></p><p><span>valueOf（），类型转换器</span></p><p><span>getInstance()， 返回参数描述的实例</span></p><p><span>newInstance()，同getInstance，但是保证了不同的对象</span></p><p><span>getType（），同getInstance()，但是转换了对象</span></p><p><span>newType（），同newInstance()，但是转换了对象</span></p><p><strong><span>构建器 builder</span></strong></p><p><span>静态工厂和构造器都不能很好的解决可选参数非常大量的时候</span></p><p><span>JavaBean模式弥补了重叠构造器模式的不足，但是因为构造过程被分到了几个调用中，所以JavaBean在构造过程中可能处于不一致的状态</span></p><p><span>建造者模式Builder</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113100430.png" referrerpolicy="no-referrer" alt="QQ图片20201113100430"></p><p><span>builder的一些缺点：</span></p><p><span>在注重性能的情况下，创建builder会有额外的开销</span></p><p><strong><span>Singleton</span></strong><span>：表示仅仅被实例化一次的类（一个类只有一个实例，并且提供一个访问他的全局访问点。。。。。windows的多线程，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行）</span></p><p><strong><span>通过私有构造器强化不可实例化的能力</span></strong></p><p><span>一些工具类，比如jav.lang.Math java.util.Arrays等实例化没有任何的意义</span></p><p><span>企图通过将类设定为抽象类来强制该类不可被实例化时行不通的</span></p><p><span>（因为这种类是可以被子类化的，该子类可以被实例化，可能会导致用户误以为这种类是为了继承而设置的）</span><strong><span>只要让这个类包含一个私有的构造器，他就不能被实例化</span></strong><span>因为只有当类不包含显示的构造器时，编译器才会生成缺省的构造器</span></p><p><strong><span>避免创建不必要的对象</span></strong></p><p><span>性能是仅次于正确性的要求，创建不必要的对象是垃圾代码</span></p><p><span>String s = new String(“hello”) 这样子做就太蠢了</span></p><p><span>String s = &quot;hello&quot; 应该这么做 </span></p><p><span>最好能重用单个对象</span></p><p><span>对于不可变类，优先使用静态工厂方法而非构造方法</span></p><p><span>但是这并不意味着创建对象时昂贵的，在现在的jvm上小对象的创建是廉价的，程序的可读性要更加的重要</span></p><p><span>有时候java的垃圾回收机制没起作用会造成内存的泄露</span></p><p><span>在支持垃圾回收的语言中，内存泄漏是很隐蔽的，如果一个对象引用被无意思的保存起来，那么垃圾处理机制就不会处理这个对象，并且也不会被这个对象引用的所有其他的对象</span></p><p><span>在栈的一个例子中，出栈的位置应该被置空，但是清空对象应该是一种例外，而不是一种规范的行为，在大多数情况下都不需要这么做</span></p><p><span>消除过期引用的最好方法是让包含该引用的变量结束生命周期</span></p><p><span>如果类自己来管理内存，那么程序员就需要警惕内存泄露的问题</span></p><p><strong><span>发生类似内存泄露的情况  ，哪些情况需要手动设置变量为null（栈stack溢出的那个例子）</span></strong></p><p><span>要避免使用终结方法</span></p><h4><a name="8-枚举和注解" class="md-header-anchor"></a><strong><span>8 枚举和注解</span></strong></h4><p><strong><span>了解枚举类</span></strong><span> 内部也可以定义方法 </span></p><p><span>枚举模式(enum pattern)是指由一组固定的常量组成合法值的类型 比如一年的四季，花色等，一般是用int常量来代替枚举类型。</span></p><p><span>但是不能很好的区分不同的类型，因为看值都是int，可以相互操作</span></p><p><span>并且其程序是非常脆弱的，因为int是编译时常量，他们的int值会被编译到客户端中，如果要修改生效，则必须重新编译，否则客户端会一直保留初始的值</span></p><p><span>并且很难转换为可打印的字符串，因为你见到的只是一个数字并不知道实际含义</span></p><p><span>也很难进行迭代便利</span></p><p><span>String模式的枚举，虽然字符串有了实际的含义，但是将这些常量编译到了客户端，后续的操作很依赖字符串的比较，这面临着书写错误等多种风险</span></p><p><strong><span>枚举类型 enum type</span></strong></p><p><span>Public enum APPLE{}</span></p><p><span>这样子就可以为每个枚举常量导出一个实例，并且没有提供构造器，是真正的final类，客户端不能创建枚举类型的实例，也不能对他进行扩展，其本质是单例Singleton的泛型化，是单元素的枚举</span></p><p><span>能够保证编译时的类型安全，每一个常量都有自己的命名空间，所以包含同名常量的多个枚举类型可以在一个系统中和平共处。当然也可以修改增加枚举类型中的常量，并且不需要重新编译客户端代码</span></p><p><strong><span>系统自带的一些方法和属性  ppt里边有</span></strong></p><p><span>枚举默认有一个静态的values()方法，按照声明顺序返回它的值数组。toString()方法返回每个枚举值的声明名称，当然你可以通过覆盖对他进行修改</span></p><p><span>如书中128页的枚举的例子，原始的地方法没有throw就不能执行，但是实际上并不能执行到throw,如果添加了新的运算符，但是没有增加case条件，编译仍然可以正常的进行。但是在运行时会发生问题</span></p><p><span>第二种方法，定义了一个抽象的方法apply，因为每个枚举类型中地抽次昂发给发都必须被他的所有常量中地具体方法覆盖，那么如果进行增加，编译器会提醒你增加新地覆盖方法，当然也可以重写toString方法，返回具体地操作符更加地便于阅读</span></p><p><span>实现了comparable接口 int compareTo(E) 所有的枚举类型会按照声明地顺序进行比较</span></p><p><span>可以用＝＝比较， 不用非要使用equals方法</span></p><p><span>String name() 其实和toString方法是类似地，对于Operation.PLUS返回PLUS</span></p><p><span>int ordinal() 按照声明顺序返回 0 1 .。。要避免使用这种方法，而是直接将对应地数值保存在一个实例域中。</span></p><p><span> //String方法有一个自动产生地valueOf(String)方法，它将常量地名字转换为常量本身。要想覆盖toString方法，要考虑实现一个fromString方法，将定制地字符串表示法变回对应地枚举（非重点）</span></p><p><strong><span>注解的作用</span></strong></p><p><span>使用注解的情况</span></p><p><span>来标识代码的错误，消除编译器的警告，单元测试等</span></p><p><span>向编译器提供一些信息地标记，还可以用于部署或者运行时处理</span></p><p><span>一般是用来检测代码地问题或者错误，禁止编译器发出警告，为了单元测试等</span></p><p><span>@AnnotationName(param=value, param=value…)</span></p><p><span>@SuppressWarnings(“unchecked”)</span></p><p><span>@Test(timeout=2000)</span></p><p><span>常见的注解 拼写正确 @override之类的</span></p><p><span>@SuppressWarnings 阻止编译器发出警告</span></p><p><span>@Override 来自父类的方法将会被覆盖  这个很常用，并且在覆盖父类的方法时一定要使用，有以下几个好处：</span></p><p><span>可以避免重载和重写的错误</span></p><p><span>可以提示编译器，编译器可以帮你检查代码错误</span></p><p><span>对于抽象类和接口都很重要</span></p><p><span>@Deprecated 不建议使用的代码</span></p><p><span>@Retention 使得注释的数据在运行时可用</span></p><p><span>在Java1.5之前是使用命名模式的 比如Junit会根据test来识别一个方法是否为测试方法，注解的出现解决了很多问题。可以自动地拼写错误进行诊断，还能传参</span></p><h4><a name="9-异常" class="md-header-anchor"></a><span>9 异常</span></h4><p><strong><span>常见的异常类</span></strong><span> 什么情况下会抛出 </span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113221859.png" referrerpolicy="no-referrer" alt="QQ图片20201113221859"></p><figure><table><thead><tr><th><span>Exception</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><span>Exception</span></td><td><span>异常层次结构的根类</span></td></tr><tr><td><span>RuntimeException</span></td><td><span>运行时异常的基类</span></td></tr><tr><td><span>ArithmeticException</span></td><td><span>算术错误，比如除数为0</span></td></tr><tr><td><span>IlleagalArgumentException</span></td><td><span>接收到非法参数</span></td></tr><tr><td><span>ArrayIndexOutOfBoundsException</span></td><td><span>用非法索引访问数组时抛出</span></td></tr><tr><td><span>NullPointerException</span></td><td><span>空指针异常，尝试访问null对象</span></td></tr><tr><td><span>ClassNotFoundException</span></td><td><span>不能加载所需的类</span></td></tr><tr><td><span>NumberFormatException</span></td><td><span>数字转转化格式异常</span></td></tr><tr><td><span>IOException</span></td><td><span>I/O异常的根类</span></td></tr><tr><td><span>FileNotFoundException</span></td><td><span>找不到文件</span></td></tr><tr><td><span>EOFException</span></td><td><span>文件结束</span></td></tr><tr><td><span>InterrupedException</span></td><td><span>线程中断</span></td></tr><tr><td><span>ClassCastException</span></td><td><span>类强制转换异常</span></td></tr></tbody></table></figure><p><span>常见的举例</span></p><p><span>//ArithmeticException</span></p><p><code>int x = 0；</code></p><p><code>System.out.println(1 / x);</code></p><p><span>// NullPointerException</span></p><p><code>Object o = null;</code></p><p><code>System.out.println(o.toString);</code></p><p><span>//NumberFormatException</span></p><p><code>int err = Integer.parseInt(&quot;hi&quot;)</code></p><p><span>//FileNotFoundException</span></p><p><code>Scanner in = new Scanner(new File(&quot;notHere.txt&quot;));</code></p><p><span>//ArrayIndexOutOfBoundsException  数组下标越界</span></p><p><code>int a = [1, 2, 3, 4];</code></p><p><code>System.out.println(a[4]);</code></p><p><span>//ClassCastException</span></p><p><code>Object text = new String(&quot;aaa&quot;);</code><span> </span></p><p><code>Integer num = (Integer) text;</code></p><p><span>常见的受检异常 </span></p><p><img src="file:///C:\Users\YSH\Documents\Tencent Files\1028509048\Image\C2C\GUVRO85GO`@W{C__MZ@$`VN.png" referrerpolicy="no-referrer" alt="img"></p><p><span>常见的非受检异常</span></p><p><span>Java.lang.ArithmeticException</span></p><p><span>Java.lang.ArrayStoreExcetpion</span></p><p><span>Java.lang.ClassCastException</span></p><p><span>Java.lang.EnumConstantNotPresentException</span></p><p><span>Java.lang.IllegalArgumentException</span></p><p><span>Java.lang.IllegalThreadStateException</span></p><p><span>Java.lang.NumberFormatException</span></p><p><span>Java.lang.IllegalMonitorStateException</span></p><p><span>Java.lang.IllegalStateException</span></p><p><span>Java.lang.IndexOutOfBoundsException</span></p><p><span>Java.lang.ArrayIndexOutOfBoundsException</span></p><p><span>Java.lang.StringIndexOutOfBoundsException</span></p><p><span>Java.lang.NegativeArraySizeException’</span></p><p><span>Java.lang.NullPointerException</span></p><p><span>Java.lang.SecurityException</span></p><p><span>Java.lang.TypeNotPresentException</span></p><p><span>Java.lang.UnsupprotedOperationException</span></p><p><span>声明受检异常，抛出异常，捕获异常（在方法声明处就需要指定抛出的异常）</span></p><p><span>调用抛出异常的方法时，也需要catch或throw异常，除非是运行时异常</span></p><p><span>捕获异常，自java7开始，就可以在一个catch捕获多个异常了</span></p><p><span>try{</span></p><p><span>}catch(FileNotFoundException | UnknowHostException e){}</span></p><p><span>当然内部的两个异常不能是父子关系，如果要捕获多个异常，那么子类的异常要在父类之前</span></p><p><span>finally通常用于做个收尾工，关闭文件之类的。当然最好不要在他的内部执行返回操作</span></p><p><span>注意以下可能发生的情况：</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113165933.png" referrerpolicy="no-referrer" alt="QQ图片20201113165933"></p><p><span>继承自RuntimeException</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201113150335.png" referrerpolicy="no-referrer" alt="QQ图片20201113150335"></p><p><span>知道是受检异常还是非受检异常</span></p><p><span>非受检异常表明编程错误</span></p><p><span>受检异常表明恢复到正常的条件，需要开发者处理异常</span></p><p><span>更高层的实现应该捕获底层的异常，同时抛出可以按照高层抽象进行解释的异常（异常转译）</span></p><p><span>始终要单独的声明受检异常，利用javadoc的@throw标签，准确的记录下抛出每个异常的条件。当然永远不要直接throw Exception</span></p><p><span>未受检的异常最好也建立文档</span></p><p><span>如果一个类中许多方法都出于同样的原因而抛出同一个异常，那么再该类的文档注释对异常建立文档这是可以接受的</span></p><p><span>为了更好的处理异常，最好再抛出的一场中包含一些细节</span></p><p><span>不要捕获异常但是不做任何的处理，最起码进行个最简单的打印操作 e.printStackTrace();</span></p><h4><a name="10-类和接口" class="md-header-anchor"></a><span>10 类和接口</span></h4><p><strong><span>使类和成员的可访问性最小化</span></strong></p><p><span>设计良好的组件要看对外部组件而言它是否很好的隐藏了内部的数据和实现的细节，模块间通过API联系，这被称为隐藏（information hiding）或者封装（encapsulation）</span></p><p><span>信息隐藏可以实现模块之间的解耦，模块之间可以独立的开发测试和维护，一个模块的问题不会影响到其他模块的性能。。总之要尽可能使每个类或者成员不被外界访问</span></p><p><span>Java提供了很多机制来协助信息隐藏</span></p><ul><li><span>private 只有声明该成员的顶层类内部才能访问</span></li><li><span>package-private 声明该成员的包内部任何类都可以访问这个成员。</span></li><li><span>protected 声明该成员的类的子类和包内部的任何类都能访问这个成员</span></li><li><span>public 任何地方都可以访问</span></li></ul><p><span>2 和3的最大的区别在于   2是实现的一部分  3是公共API的一部分</span></p><p><span>对于顶层的类和接口只有public 和 package-private。当然尽可能做成包级私有的</span></p><p><span>如果一个包级私有的顶层类或者接口只是在某一个类的内部被使用，那么就应该考虑将使它称为唯一使用他那个类的私有嵌套类。</span></p><p><span>在不确定的时候尽可能降低可访问性</span></p><p><span>在重写父类的方法时，是不能提高访问级别的。接口的成员是public，那么实现类也只能呢是public</span></p><p><span>不要为了方便测试来，提升成员的可访问性</span></p><p><strong><span>要在公有类而非公有域中使用访问方法</span></strong></p><p><span>全部使用public是不安全的，可以使用get/set方法来代替</span></p><p><span>如果类可以在他的包之外被访问，那么则需要提供访问方法</span></p><p><strong><span>使可变性最小化</span></strong></p><p><span>不可变类是指他的实例不能被修改，每个实例包含的信息必须在创建时就指定，并且在整个生命周期内不可变。有以下几个好处  (String  Integer  BigTnteger BigDecimal)</span></p><p><span>天生就是线程安全的，可以自由共享等等更加易于设计实现和使用,不需要进行防御性的拷贝</span></p><p><span>可变类可能会出现不一致的情况（</span><a href='chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=http%3A%2F%2F10.82.59.88%3A8080%2Faoot2020%2Fweek7%2FBloch4.pdf'><span>Bloch4 16</span></a><span>）</span></p><p><span>使类称为不可变，需要遵循以下的原则</span></p><p><span>1 不要提供任何会修改对象状态的方法</span></p><p><span>2 声明所有的域都是final和private</span></p><p><span>3 不允许子类重写方法（保证类不会被扩展）</span></p><p><span>4 如果实例域包含对可变对象的引用，则不允许这些对象被更改（不要提供方法，也不要提供对象的引用）</span></p><p><span>缺点是：对于每一个不同的值都需要一个单独的对象</span></p><p><span>在并发应用程序中使用可变类应该非常小心，不可变对象本质上是线程安全的，他们不要求同步，多个线程并发访问不可变的对象时，并不会遭到破坏</span></p><p><span>String是不可变的，所以提供了（StringBuffer已经弃用 ）改用StringBuilder</span></p><p><strong><span>复合优先于继承</span></strong><span> 仅针对实现继承时存在的问题  ，接口的继承并不存在此类的问题</span></p><p><span>继承在包内部使用是安全的，但是跨包是非常危险的</span></p><p><strong><span>继承是打破了封装的</span></strong><span>：换句话说，子类依赖超类中特定功能的实现细节，超类的实现有可能会随着发行版本的不同而有所变化，那么子类可能受到破坏 eg书中的例子在继承HashSet并实现了addALL导致在添加元素时可能会出现重复添加。因为addAll方法是在add方法上实现的。在利用super.addALll方法时，调用了HashSet的adAll，而HashSet的addAll方法会调用add方法，再次把每个元素都添加一遍</span></p><p><span>重写方法可能会出现很多的威胁，可能会破坏超类的不可变性，也可能会破坏子类的不可变性</span></p><p><strong><span>复合（Composition）</span></strong><span>解决了所有的问题，不扩展现有的类，而是在新类中增加一个私有域，它引用现有类的一个实例，新的类的每一个实例方法都可以调用被包含的现有类实例中对应的方法，并返回他的结果，这被称为</span><strong><span>转发</span></strong><span>（forwarding），比如书上的例子通过Set接口，因为Set接口保存了HashSet类的功能特性</span></p><p><img src="C:\Users\YSH\Pictures\md的图片\QQ图片20201114102343.png" referrerpolicy="no-referrer" alt="QQ图片20201114102343"></p><p><span>Java中有很多地方违反了，比如stack并不是vector,所以栈不应该是扩展向量的。</span></p><p><strong><span>要么设计继承并提供说明文档，要么禁止继承</span></strong></p><p><span>该类的文档必须精确的描述覆盖每个方法带来的影响，换句话说，该类必须有文档说明它可覆盖（OverRide）的方法的自用性（self-use）</span></p><p><span>接口的设计是很重要的，如果接口设计的很糟糕，那么它的子类会很难受，并且没办法做出修改。</span></p><p><span>需要编写子类来测试为继承而设计的类（这也是唯一的测试方法），来判断某个方法是否应该设计为protected，通常三个子类的测试就足够了</span></p><p><strong><span>构造函数不能调用可重写的方法</span></strong><span> 可能会出现输出不同步或者抛出异常（Block4 33）</span></p><p><img src="file:///C:\Users\YSH\Documents\Tencent Files\1028509048\Image\C2C\MOL@E5Q_W@QD3V[TV9R[`8B.png" referrerpolicy="no-referrer" alt="img"></p><p><span>在上面的例子中，构造方法调用了可覆盖的函数m（）</span></p><p><span>那么我执行</span><code>Sub s = new Sub();</code></p><p><span>Sub()的构造函数中发生的第一件事是调用了Super()的构造函数，但是Super()中对m()的调用被覆盖，但是data变量此时还未初始化。并且Super类中的m()从未被初始化</span></p><p><span>在为了继承而设计类的时候，Cloneable（克隆）和Serializable（序列化）接口出现了特殊的困难。因为这两个方法在行为上非常类似于构造器，所以类似的限制规则也是适用的</span></p><p><span>为了继承而设计类，对这个类会有一些实质性的限制</span></p><p><span>这个问题的最佳解决方案时，对于那些并非为了安全地进行子类化而设计和编写文档的类，要禁止子类化。</span></p><p><strong><span>接口优于抽象类</span></strong></p><p><span>由于java的单继承原则，使用抽象类作为类型定义受到了限制。但是现有的类很容易被更新以实现新的接口</span></p><p><span>接口是定义mixin(混合类型)的理想选择  比如说Comparable是一个mixin接口</span></p><p><span>接口允许构造非层次结构的类型框架</span></p><p><span>但是因为接口不能包括方法，所以有时候会比较难用</span></p><p><span>当然结合接口和抽象类的优点进行设计，对接口提供一个抽象的骨架实现（skeletal implementation）  通常被称为抽象接口（AbstractInterface） </span></p><p><span> AbstractCollection AbstractSet AbstractList等等,这些骨架类基本完美的实现了这些接口的所有功能，使用起来非常方便。</span></p><p><strong><span>类层次优于标签类</span></strong></p><p><span>标签类有许多缺点，充斥着很多样板代码，包括枚举声明、标签域及条件语句，标签过于冗长、容易出错、并且效率低下</span></p><p><span>例子中的shape类中，增加一个新的shape是很难的，将他拆解为父类子类就会见到那很多  定义一个abstract class Shape  只有一个抽象方法area()</span></p><p><strong><span>静态成员类优于非静态成员类</span></strong></p><p><span>嵌套类：nested classes 定义在一个类的内部的类，它存在的目的应该只是为他的外围类（enclosing class）提供服务   他是编译器而不是虚拟机支持的一种现象</span></p><p><span>嵌套类有静态成员类  非静态成员类  匿名类和局部类 除了第一种其他的均为内部类</span></p><p><span>静态成员类和非静态成员类之间的唯一的区别是，静态成员类的声明中包含修饰符static.非静态成员类的每个实例都隐含地与一种外围类的一个外围实例相关联（enclosing instance）可能存在一些性能问题，有时也可能需要自己创建，所所以倾向于使用静态类</span></p><h4><a name="11-设计模式的区分" class="md-header-anchor"></a><span>11 设计模式的区分</span></h4><p><span> java8还有java9一些新版的特性 optional等</span></p><p><span>optional是在java8被引入的，Optional 类是一个可以为null的容器对象。如果值存在则isPresent()方法会返回true，调用get()方法会返回该对象。</span></p><p><span>Optional 是个容器：它可以保存类型T的值，或者仅仅保存null。Optional提供很多有用的方法，这样我们就不用显式进行空值检测。</span></p><p><span>Optional 类的引入很好的解决空指针异常。</span></p><p><span> </span><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093840534.png" referrerpolicy="no-referrer" alt="image-20201113093840534"></p><p>&nbsp;</p><p><span> </span><img src="C:\Users\YSH\AppData\Roaming\Typora\typora-user-images\image-20201113093847792.png" referrerpolicy="no-referrer" alt="image-20201113093847792"></p><p><span>Java9引入了module,其实就是一组包，可以在模块声明中显示的导出某些包，通常位于module-info.java这个包中</span></p><p><img src="file:///C:\Users\YSH\Documents\Tencent Files\1028509048\Image\C2C\~FP~79NQ9~}{PR62J4S~VYO.png" referrerpolicy="no-referrer" alt="img"></p></div>
+</body>
+</html>
