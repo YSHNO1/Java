@@ -1,28 +1,28 @@
-public class Solution {
-    //背包问题
-    public int testWeightBagProblem(int[] weight, int[] value, int bagSize){
-        int[][] dp = new int[weight.length + 1][bagSize + 1];
-        //初始化
-        for(int i = 0; i < dp.length; i++){
-            dp[i][0] = 0;
-        }
-        for(int j = weight[0]; j <= bagSize; j++){
-            dp[0][j] = value[0];
-        }
-        for(int i = 1; i < dp.length; i++){
-            for(int j = 1; i < dp[0].length; j++){
-                if(j < weight[i - 1]) dp[i][j] = dp[i - 1][j];
-                else dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
-            }
-        }
-        return dp[weight.length - 1][bagSize - 1];
-    }
+import java.util.*;
 
+
+class Solution {
+    public int[] smallestTrimmedNumbers(String[] nums, int[][] queries) {
+        int n = queries.length;
+        int[] res = new int[n];
+        for(int i = 0; i < n; i++){
+            PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o2[0] - o1[0]);
+            int k = queries[i][0], trim = queries[i][1];
+            for(int j = 0; j < nums.length; j++){
+                queue.offer(new int[]{Integer.parseInt(nums[j].substring(nums[j].length() - trim).trim()) ,j});
+                if(queue.size() > k) queue.poll();
+            }
+            res[i] = queue.peek()[1];
+        }
+        return res;
+    }
     public static void main(String[] args) {
-        int[] weight = new int[]{1, 3, 4};
-        int[] value = new int[]{15, 20, 30};
-        Solution solution = new Solution();
-        int res = solution.testWeightBagProblem(weight, value, 4);
-        System.out.println(res);
+        Solution s = new Solution();
+        String[] nums = new String[]{"64333639502","65953866768","17845691654","87148775908","58954177897","70439926174","48059986638","47548857440","18418180516","06364956881","01866627626","36824890579","14672385151","71207752868"};
+        int[][] queries = {{5, 10}};
+        int[] res = s.smallestTrimmedNumbers(nums, queries);
+        for (int re : res) {
+            System.out.print(re + " ");
+        }
     }
 }

@@ -3,7 +3,7 @@ package Sort;
 import java.util.Arrays;
 
 public class Sort {
-    int[] nums = new int[]{2, 4, 3, 1, 6, 5};
+    int[] nums = new int[]{2, 4, 3, 1, 6, 5, 6, 7, 5};
 
     //冒泡排序 带优化
     public void bubbleSort(int[] a){
@@ -68,7 +68,7 @@ public class Sort {
         }
     }
 
-    //希尔排序
+    //希尔排序 步长初始为长度的一半，
     public void shellSort(int[] a){
 
     }
@@ -76,8 +76,8 @@ public class Sort {
     public static void main(String[] args) {
         Sort sort = new Sort();
 //        sort.bubbleSort(sort.nums);
-//        sort.quickSort(sort.nums, 0, sort.nums.length - 1);
-        sort.insertSort(sort.nums);
+        sort.quickSort(sort.nums, 0, sort.nums.length - 1);
+//        sort.insertSort(sort.nums);
         System.out.println("排序后：" + Arrays.toString(sort.nums));
     }
 }
